@@ -34,7 +34,7 @@ notify() {
 }
 
 # echo "Let's check the latest available Selenium server standalone version."
-name_and_version=$(curl http://selenium-release.storage.googleapis.com/ | grep -oP 'selenium-server-standalone-.+?(?=.jar)' | tail -1)
+name_and_version=$(curl -s http://selenium-release.storage.googleapis.com/ | grep -oP 'selenium-server-standalone-.+?(?=.jar)' | tail -1)
 last_version=${name_and_version:27}
 # echo "The latest available Selenium server standalone version is" $last_version
 if [ "$last_version" != "2.45.0" ]; then
