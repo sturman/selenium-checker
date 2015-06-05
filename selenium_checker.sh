@@ -37,6 +37,6 @@ notify() {
 name_and_version=$(curl -s http://selenium-release.storage.googleapis.com/ | grep -oP 'selenium-server-standalone-.+?(?=.jar)' | tail -1)
 last_version=${name_and_version:27}
 # echo "The latest available Selenium server standalone version is" $last_version
-if [ "$last_version" != "2.45.0" ]; then
+if [ "$last_version" != "2.46.0" ]; then
     $(notify "Selenium $last_version" "Selenium version $last_version is available" 5000)
 fi
